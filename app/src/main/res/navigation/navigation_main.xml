@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.project.segunfrancis.roomwordsamplekotlin.MainFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/newWordFragment"
+        android:name="com.project.segunfrancis.roomwordsamplekotlin.NewWordFragment"
+        android:label="Add New Word"
+        tools:layout="@layout/fragment_new_word">
+        <action
+            android:id="@+id/action_newWordFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/fragment_close_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@+id/mainFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
